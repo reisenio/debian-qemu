@@ -9,4 +9,8 @@ RUN sed "s/jessie/stretch/g" /etc/apt/sources.list > /etc/apt/sources.list \
  && apt-get update \
  && apt-get -y dist-upgrade
 
-RUN [ "cross-build-stop" ]
+RUN apt-get -y autoremove \
+ && apt-get -y clean \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN [ "cross-build-end" ]
