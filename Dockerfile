@@ -7,8 +7,6 @@ RUN [ "cross-build-start" ]
 RUN apt-get update; \
     apt-get -y dist-upgrade
 
-COPY --from=add-apt-repositories /etc/apt/trusted.gpg /etc/apt/trusted.gpg
-
 COPY --from=add-apt-repositories /etc/apt/sources.list /etc/apt/sources.list
 
 RUN apt-get update \
