@@ -5,7 +5,7 @@ RUN [ "cross-build-start" ]
 RUN apt-get update \
  && apt-get -y dist-upgrade
 
-RUN sed "s/jessie/stretch/g" > /etc/apt/sources.list \
+RUN sed "s/jessie/stretch/g" /etc/apt/sources.list > /etc/apt/sources.list \
  && apt-get update \
  && apt-get -y dist-upgrade
 
